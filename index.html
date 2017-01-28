@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+    <title>SAVE YOUR PASSWORD</title>
+    <script data-main="js/app" src="js/scripts/require.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/main.css"/>
+</head>
+<body>
+<div class="container newPasswordForm">
+    <form>
+        <ul class="flex-outer">
+            <li>
+                <button class="backToList" type="button" id="backToList">Back To Password List</button>
+            </li>
+            <li>
+                <label for="service">service:</label>
+                <input type="text" id="service" placeholder="Enter your service here">
+            </li>
+            <li>
+                <label for="user-name">user name:</label>
+                <input type="text" id="user-name" placeholder="Enter your user name here">
+            </li>
+            <li>
+                <label for="password">password:</label>
+                <input type="email" id="password" placeholder="Enter your password here">
+            </li>
+            <li>
+                <button id="savePass" type="button">Save</button>
+            </li>
+        </ul>
+    </form>
+</div>
+<div class="container passwordList" style="display: none">
+    <div id="test"></div>
+    <form>
+        <ul id="passwordList" class="flex-outer">
+            <li>
+                <button class="backToList" type="button" id="addNew">Add new password</button>
+            </li>
+        </ul>
+    </form>
+</div>
+</body>
+</html>
