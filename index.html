@@ -7,7 +7,7 @@
 </head>
 <body>
 <div class="container newPasswordForm">
-    <form>
+    <form class="new-password-form">
         <ul class="flex-outer">
             <li>
                 <button class="backToList" type="button" id="backToList">Back To Password List</button>
@@ -17,8 +17,8 @@
                 <input type="text" id="service" placeholder="Enter your service here">
             </li>
             <li>
-                <label for="user-name">user name:</label>
-                <input type="text" id="user-name" placeholder="Enter your user name here">
+                <label for="userName">user name:</label>
+                <input type="text" id="userName" placeholder="Enter your user name here">
             </li>
             <li>
                 <label for="password">password:</label>
@@ -30,7 +30,7 @@
         </ul>
     </form>
 </div>
-<div class="container passwordList" style="display: none">
+<div class="container passwordList">
     <div id="test"></div>
     <form>
         <ul id="passwordList" class="flex-outer">
@@ -40,5 +40,17 @@
         </ul>
     </form>
 </div>
+<script src="https://www.gstatic.com/firebasejs/3.6.7/firebase.js"></script>
+<script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyDyVQv8JFcDz2wyrsQt9xgip2xCCDKSy78",
+        authDomain: "chrome-extensions-793ac.firebaseapp.com",
+        databaseURL: "https://chrome-extensions-793ac.firebaseio.com",
+        storageBucket: "chrome-extensions-793ac.appspot.com",
+        messagingSenderId: "44666153436"
+    };
+    firebase.initializeApp(config);
+</script>
 </body>
 </html>

@@ -14,7 +14,7 @@ requirejs.config({
     },
     map: {
         '*': {
-            'templates/item': 'templates/item'
+            'templates/item': '../../templates/item'
         }
     }
 });
