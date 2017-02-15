@@ -1,13 +1,14 @@
 define(['jquery'], function ($) {
     // Initialize Firebase
-    /* var config = {
+     var config = {
      apiKey: "AIzaSyDyVQv8JFcDz2wyrsQt9xgip2xCCDKSy78",
      authDomain: "chrome-extensions-793ac.firebaseapp.com",
      databaseURL: "https://chrome-extensions-793ac.firebaseio.com",
      storageBucket: "chrome-extensions-793ac.appspot.com",
      messagingSenderId: "44666153436"
      };
-     firebase.initializeApp(config);*/
+     firebase.initializeApp(config);
+
     var apiFirbaseStorage =
     {
         list: [],
