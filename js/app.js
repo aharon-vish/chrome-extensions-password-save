@@ -8,7 +8,7 @@ requirejs.config({
             exports: '_'
         },
         backbone: {
-            deps: ["underscore", "jquery"],
+            deps: ["underscore", "jquery","apiFirbaseStorage"],
             exports: "Backbone"
         }
     },

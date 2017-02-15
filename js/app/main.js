@@ -1,60 +1,64 @@
-define(['jquery', 'underscore', 'text!templates/item.html'], function ($, _, template) {
-    this.item = {
-        service: '',
-        userName: '',
-        password: '',
-        index: ''
-    };
-    this.passwordListArray = [];
+define(['jquery', 'underscore', 'apiFirbaseStorage', 'text!templates/item.html']
+    , function ($, _, storage, template) {
+        var passwordAndUserList;
 
-    $(document).ready(function () {
-//todo fetch data and display
-    });
+        $('.new-password-form input').on('keydown', function (e) {
+            if (e.keyCode === 32) {
+                return false;
+            }
+        });
+        $('#backToList').click(function (e) {
+            $('.newPasswordForm').slideUp("slow");
+            $('.passwordList').css('display', 'block');
 
-    $('#backToList').click(function (e) {
-        $('.newPasswordForm').slideUp("slow");
-        $('.passwordList').css('display', 'block');
+            // if (passwordAndUserList === undefined) {
+            passwordAndUserList = storage._getAllRecored();
+            //}
+            $('[data-elemnt-index]').remove();
+            $.each(passwordAndUserList, function (index, item) {
+                $('#passwordList').append(_.template(template, {item}));
+                $('button[data-elemnt-index=' + item.service + ']').on("click", removeEl.bind(this));
+            });
+        }).bind(this);
 
-        $('#deleteBtn').on( "click",function (e) {
+        $('#addNew').click(function () {
+            $('.passwordList').css('display', '');
+            $('.newPasswordForm').slideDown("slow");
+        });
+
+        $('#savePass').click(function (e) {
+            var formInputArray = $('.new-password-form input');
+            // var itemAddToList = mapToObject(formInputArray, objectItem, []);
+            var objectItem = {};
+            objectItem.service = $('#service').val();
+            objectItem.userName = $('#userName').val();
+            objectItem.password = $('#password').val();
+
+            if (objectItem.service === "" ||
+                objectItem.userName === "" ||
+                objectItem.password === "") {
+                alert("not valid input");
+                $(".new-password-form").trigger('reset');
+                return;
+            }
+            $(".new-password-form").trigger('reset');
+
+            storage._add(objectItem);
+        }).bind(this);
+
+        function removeEl(e) {
             var $delBtn = $(e.currentTarget);
             var elIndex = $delBtn.attr('data-elemnt-index');
             $('li[data-elemnt-index=' + elIndex + ']').remove();
-            //todo delete from local storage
-        });
-
-    }).bind(this);
-
-    $('#addNew').click(function () {
-        $('.passwordList').css('display', '');
-        $('.newPasswordForm').slideDown("slow");
-    });
-
-    $('#savePass').click(function (e) {
-        var formInputArray = $('.new-password-form input');
-        item = mapToObject(formInputArray, item, ['index']);
-        item.index = $('#passwordList').children().length;
-
-        $('#passwordList').append(_.template(template, {item}));
-        $(".new-password-form").trigger('reset');
-
-        passwordListArray.push(item);
-
-        //todo add data to database
-
-    });
-
-    function mapToObject(itemArr, object, doNotMapThoseKeys) {
-        Object.keys(object).map(function (key) {
-            $.each(itemArr, function (index, value) {
-                if (key === value.id) {
-                    item[key] = value.value;
-                    return false;
-                } else if ($.inArray(key, doNotMapThoseKeys) > 0) {
+            $.each(passwordAndUserList, function (index, ele) {
+                if (ele.service === elIndex) {
+                    passwordAndUserList.splice(index, 1);
                     return false;
                 }
             });
-        });
-        return object;
-    }
 
-});
+            storage._remove(elIndex);
+        }
+
+    }
+);
