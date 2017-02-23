@@ -18,4 +18,4 @@ requirejs.config({
         }
     }
 });
-requirejs(["app/main","app/testApiFirebase"]);
+requirejs(["app/main"]);
