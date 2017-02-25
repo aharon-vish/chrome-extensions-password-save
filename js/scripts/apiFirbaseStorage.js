@@ -34,13 +34,27 @@ define(['jquery'], function ($) {
                 console.log("Error: " + error.code);
             });
         },
-        _edit: function () {
-            firebase.database().ref('passwords/' + userId).set({
-                username: name,
-                email: email,
-                profile_picture : imageUrl
+        _edit: function (key,username,password) {
+            firebase.database().ref('passwords/' + key).set({
+                username: username,
+                password: password
             });
         }
     };
+
+    // (function googleSignin() {
+    //     var provider = new firebase.auth.GoogleAuthProvider();
+    //     firebase.auth().signInWithPopup(provider).then(function(result) {
+    //         var token = result.credential.accessToken;
+    //         var user = result.user;
+    //         console.log(token);
+    //         console.log(user);
+    //     }).catch(function(error) {
+    //         console.log(error.code);
+    //         console.log(error.message);
+    //
+    //     });
+    // })();
+
     return apiFirbaseStorage;
 });
