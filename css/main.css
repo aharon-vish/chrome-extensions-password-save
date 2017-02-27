@@ -119,46 +119,202 @@ body {
 .btnContainer {
     display: flex;
 }
-
-.testt {
-    width: 20px;
-    height: 20px;
-    background-color: red;
-    position: relative;
-    /*-webkit-animation-name: example; !* Safari 4.0 - 8.0 *!*/
-    /*-webkit-animation-duration: 4s; !* Safari 4.0 - 8.0 *!*/
-    /*animation-name: example;*/
-    /*animation-duration: 4s;*/
-    animation-direction: alternate-reverse;
-    animation: example 4s infinite;
-    border-radius: 50px;
+.container {
+    height: 100vh;
+    width: 30rem;
+    font-family: Helvetica;
 }
 
-/* Standard syntax */
-@keyframes example {
-    0% {
-        background-color: red;
-        left: 0px;
-        top: 0px;
+.loader {
+    height: 20px;
+    width: 250px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+.loader--dot {
+    height: 20px;
+    width: 20px;
+    border-radius: 100%;
+    background-color: black;
+    position: absolute;
+    border: 2px solid white;
+}
+.loader--dot:first-child {
+    background-color: #8cc759;
+    animation-name: loader-a;
+    animation-timing-function: ease-in-out;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-delay: 0.5s;
+}
+.loader--dot:nth-child(2) {
+    background-color: #8c6daf;
+    animation-name: loader-b;
+    animation-timing-function: ease-in-out;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-delay: 0.4s;
+}
+.loader--dot:nth-child(3) {
+    background-color: #ef5d74;
+    animation-name: loader-c;
+    animation-timing-function: ease-in-out;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-delay: 0.3s;
+}
+.loader--dot:nth-child(4) {
+    background-color: #f9a74b;
+    animation-name: loader-d;
+    animation-timing-function: ease-in-out;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-delay: 0.2s;
+}
+.loader--dot:nth-child(5) {
+    background-color: #60beeb;
+    animation-name: loader-e;
+    animation-timing-function: ease-in-out;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-delay: 0.1s;
+}
+.loader--dot:nth-child(6) {
+    background-color: #fbef5a;
+    animation-name: loader-f;
+    animation-timing-function: ease-in-out;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-delay: 0s;
+}
+@keyframes loader-a {
+    15% {
+        transform: translateX(0);
     }
-    25% {
-        background-color: yellow;
-        left: 20px;
-        top: 0px;
+    45% {
+        transform: translateX(230px);
+    }
+    65% {
+        transform: translateX(230px);
+    }
+    95% {
+        transform: translateX(0);
+    }
+}
+@keyframes loader-b {
+    15% {
+        transform: translateX(0);
+    }
+    45% {
+        transform: translateX(230px);
+    }
+    65% {
+        transform: translateX(230px);
+    }
+    95% {
+        transform: translateX(0);
+    }
+}
+@keyframes loader-c {
+    15% {
+        transform: translateX(0);
+    }
+    45% {
+        transform: translateX(230px);
+    }
+    65% {
+        transform: translateX(230px);
+    }
+    95% {
+        transform: translateX(0);
+    }
+}
+@keyframes loader-d {
+    15% {
+        transform: translateX(0);
+    }
+    45% {
+        transform: translateX(230px);
+    }
+    65% {
+        transform: translateX(230px);
+    }
+    95% {
+        transform: translateX(0);
+    }
+}
+@keyframes loader-e {
+    15% {
+        transform: translateX(0);
+    }
+    45% {
+        transform: translateX(230px);
+    }
+    65% {
+        transform: translateX(230px);
+    }
+    95% {
+        transform: translateX(0);
+    }
+}
+@keyframes loader-f {
+    15% {
+        transform: translateX(0);
+    }
+    45% {
+        transform: translateX(230px);
+    }
+    65% {
+        transform: translateX(230px);
+    }
+    95% {
+        transform: translateX(0);
+    }
+}
+
+#square{
+    width: 50px;
+    height: 50px;
+    animation-name: spinnow;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    position: fixed;
+    top: 35%;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+@-webkit-keyframes spinnow {
+    0%{
+        background: #f9a74b;
+        transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+
+    }
+
+    25%{
+        background: #fbef5a;
+        transform: rotate(90deg);
+        -webkit-transform: rotate(90deg);
+
     }
     50% {
-        background-color: blue;
-        left: 40px;
-        top: 0px;
+        background: #60beeb;
+        transform: rotate(180deg);
+        -webkit-transform: rotate(180deg);
     }
     75% {
-        background-color: green;
-        left: 60px;
-        top: 0px;
+        background: #ef5d74;
+        transform: rotate(270deg);
+        -webkit-transform: rotate(270deg);
     }
     100% {
-        background-color: red;
-        left: 80px;
-        top: 0px;
+        background: #f9a74b;
+        transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
     }
 }
