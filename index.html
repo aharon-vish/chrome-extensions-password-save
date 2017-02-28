@@ -2,33 +2,33 @@
 <html>
 <head>
     <title>SAVE YOUR PASSWORD</title>
-    <script src="https://www.gstatic.com/firebasejs/3.6.7/firebase.js"></script>
     <!--<script src="https://www.gstatic.com/firebasejs/3.6.7/firebase.js"></script>-->
+    <script src="js/scripts/firebase.js"></script>
     <script data-main="js/app" src="js/scripts/require.js"></script>
     <link rel="stylesheet" type="text/css" href="css/main.css"/>
 </head>
 <body>
 <div class='container' id='loader-container'>
-    <!--<div class='loader'>-->
-        <!--<div class='loader&#45;&#45;dot'></div>-->
-        <!--<div class='loader&#45;&#45;dot'></div>-->
-        <!--<div class='loader&#45;&#45;dot'></div>-->
-        <!--<div class='loader&#45;&#45;dot'></div>-->
-        <!--<div class='loader&#45;&#45;dot'></div>-->
-        <!--<div class='loader&#45;&#45;dot'></div>-->
-    <!--</div>-->
+    <!--&lt;!&ndash;<div class='loader'>&ndash;&gt;-->
+        <!--&lt;!&ndash;<div class='loader&#45;&#45;dot'></div>&ndash;&gt;-->
+        <!--&lt;!&ndash;<div class='loader&#45;&#45;dot'></div>&ndash;&gt;-->
+        <!--&lt;!&ndash;<div class='loader&#45;&#45;dot'></div>&ndash;&gt;-->
+        <!--&lt;!&ndash;<div class='loader&#45;&#45;dot'></div>&ndash;&gt;-->
+        <!--&lt;!&ndash;<div class='loader&#45;&#45;dot'></div>&ndash;&gt;-->
+        <!--&lt;!&ndash;<div class='loader&#45;&#45;dot'></div>&ndash;&gt;-->
+    <!--&lt;!&ndash;</div>&ndash;&gt;-->
     <div id="square">
 
     </div>
 </div>
-<div style="display: none" class="container newPasswordForm">
+<div class="container newPasswordForm">
     <form class="new-password-form">
         <ul class="flex-outer">
             <li>
                 <button class="backToList" type="button" id="backToList">Back To Password List</button>
             </li>
             <li>
-                <label for="service">service:</label>g
+                <label for="service">service:</label>
                 <input type="text" id="service" placeholder="Enter your service here">
             </li>
             <li>
@@ -45,7 +45,7 @@
         </ul>
     </form>
 </div>
-<div style="display: none" class="container passwordList">
+<div class="container passwordList">
     <div id="test"></div>
     <form>
         <ul id="passwordList" class="flex-outer">

@@ -1,5 +1,4 @@
 define(['jquery'], function ($) {
-    // Initialize Firebase
     var config = {
         apiKey: "AIzaSyDyVQv8JFcDz2wyrsQt9xgip2xCCDKSy78",
         authDomain: "chrome-extensions-793ac.firebaseapp.com",
@@ -42,19 +41,18 @@ define(['jquery'], function ($) {
         }
     };
 
-    // (function googleSignin() {
-    //     var provider = new firebase.auth.GoogleAuthProvider();
-    //     firebase.auth().signInWithPopup(provider).then(function(result) {
-    //         var token = result.credential.accessToken;
-    //         var user = result.user;
-    //         console.log(token);
-    //         console.log(user);
-    //     }).catch(function(error) {
-    //         console.log(error.code);
-    //         console.log(error.message);
-    //
-    //     });
-    // })();
+     (function googleSignin() {
+         var provider = new firebase.auth.GoogleAuthProvider();
+         firebase.auth().signInWithPopup(provider).then(function(result) {
+             var token = result.credential.accessToken;
+             var user = result.user;
+             $("#backToList").trigger('click');
+         }).catch(function(error) {
+             console.log(error.code);
+             console.log(error.message);
+
+         });
+     })();
 
     return apiFirbaseStorage;
 });

@@ -1,16 +1,55 @@
 {
   "manifest_version": 2,
-  "name": "Hello World",
-  "description": "This is my first Chrome extension.",
+  "name": "PassWordSaver",
+  "description": "Save Your Password",
   "version": "1.0",
   "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+  "background": {
+    "scripts": ["js/scripts/background.js"],
+    "persistent": false
+  },
   "browser_action": {
-    "default_icon": "img/icon.png",
-    "default_popup": "index.html"
+    "default_icon":"img/icon.png",
+    "default_title":"Pluralsight Helper"
   },
   "permissions": [
     "storage",
+    "tabs",
     "notifications",
     "contextMenus"
   ]
 }
+
+//{
+//  "manifest_version":2,
+//
+//  "name":"Pluralsight Helper",
+//  "description":"Adds functionality to the Pluralsight website.",
+//  "version":"1.0",
+//
+//  "page_action": {
+//    "default_icon":"icon.png",
+//    "default_title":"Pluralsight Helper",
+//    "default_popup":"popup.html"
+//  },
+//
+//  "background":{
+//    "scripts":["eventPage.js"],
+//    "persistent":false
+//  },
+//
+//  "content_scripts":[
+//    {
+//      "matches":["http://pluralsight.com/training/Courses/*", "http://pluralsight.com/training/Authors/Details/*"],
+//      "js":["pluralsight_cs.js","jquery-1.10.2.js", "jquery.dataTables.js"],
+//      "css":["pluralsight_cs.css"]
+//    }
+//  ],
+//
+//  "permissions":[
+//    "tabs",
+//    "http://pluralsight.com/*"
+//  ]
+//
+//
+//}

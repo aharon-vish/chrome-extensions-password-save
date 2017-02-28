@@ -25,6 +25,7 @@ define(['jquery', 'underscore', 'apiFirbaseStorage', 'text!templates/item.html']
                             attachClickEvent(item);
                         }
                     }
+                    $('#loader-container').remove();
                 });
             }
         });
